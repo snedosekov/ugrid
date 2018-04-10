@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ugrid.X
+PROJECTNAME=ugrid.x
 
 # Active Configuration
 DEFAULTCONF=default

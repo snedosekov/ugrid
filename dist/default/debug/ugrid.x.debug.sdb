@@ -1,0 +1,289 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1769 ]
+[d frameptr 6 ]
+"88 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/adc.c
+[e E10357 . `uc
+channel_AN1 1
+channel_AN2 2
+channel_AN4 4
+channel_DAC4_Output 26
+channel_DAC3_Output 27
+channel_DAC2_Output 28
+channel_Temp 29
+channel_DAC1_Output 30
+channel_FVRBuffer1 31
+]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"49 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\main.c
+[v _main main `(v  1 e 1 0 ]
+"64 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"137
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+"68 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
+"52 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"60
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"72
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"57 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"49 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\ugrid.c
+[v _get_tab_idx get_tab_idx `T(uc  1 s 1 get_tab_idx ]
+[s S360 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"372 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1769.h
+[s S369 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S374 . 1 `S360 1 . 1 0 `S369 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES374  1 e 1 @11 ]
+[s S103 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"599
+[s S112 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CCPIF 1 0 :1:2 
+]
+[u S115 . 1 `S103 1 . 1 0 `S112 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES115  1 e 1 @17 ]
+"1714
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1759
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1798
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S24 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1881
+[s S33 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CCPIE 1 0 :1:2 
+]
+[u S36 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES36  1 e 1 @145 ]
+[s S295 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"2123
+[s S302 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S309 . 1 `S295 1 . 1 0 `S302 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES309  1 e 1 @149 ]
+"2240
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"2299
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"2357
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2429
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @154 ]
+"2498
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"2518
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"2538
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S62 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+"2563
+[s S66 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+[s S74 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S77 . 1 `S62 1 . 1 0 `S66 1 . 1 0 `S74 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES77  1 e 1 @157 ]
+"2618
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2671
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @159 ]
+"2725
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2770
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"2809
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"4049
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"4088
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"4127
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"5214
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"5264
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"5303
+[v _WPUC WPUC `VEuc  1 e 1 @526 ]
+"6763
+[v _BORCON BORCON `VEuc  1 e 1 @541 ]
+"6892
+[v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
+"6937
+[v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
+"6976
+[v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
+[s S169 . 1 `uc 1 DAC1LD 1 0 :1:0 
+`uc 1 DAC2LD 1 0 :1:1 
+]
+"11234
+[u S172 . 1 `S169 1 . 1 0 ]
+[v _DACLDbits DACLDbits `VES172  1 e 1 @1424 ]
+"11249
+[v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @1425 ]
+[s S178 . 1 `uc 1 NSS 1 0 :2:0 
+`uc 1 PSS 1 0 :2:2 
+`uc 1 . 1 0 :1:4 
+`uc 1 OE1 1 0 :1:5 
+`uc 1 FM 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"11302
+[s S185 . 1 `uc 1 NSS0 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 PSS0 1 0 :1:2 
+`uc 1 PSS1 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 OE 1 0 :1:5 
+]
+[s S192 . 1 `uc 1 DACNSS 1 0 :2:0 
+`uc 1 DACPSS 1 0 :2:2 
+`uc 1 . 1 0 :1:4 
+`uc 1 DACOE1 1 0 :1:5 
+`uc 1 DACFM 1 0 :1:6 
+`uc 1 DACEN 1 0 :1:7 
+]
+[s S199 . 1 `uc 1 DACNSS0 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 DACPSS0 1 0 :1:2 
+`uc 1 DACPSS1 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 DACOE 1 0 :1:5 
+]
+[s S206 . 1 `uc 1 DAC1NSS 1 0 :2:0 
+`uc 1 DAC1PSS 1 0 :2:2 
+`uc 1 . 1 0 :1:4 
+`uc 1 DAC1OE1 1 0 :1:5 
+`uc 1 DAC1FM 1 0 :1:6 
+`uc 1 DAC1EN 1 0 :1:7 
+]
+[s S213 . 1 `uc 1 DAC1NSS0 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 DAC1PSS0 1 0 :1:2 
+`uc 1 DAC1PSS1 1 0 :1:3 
+]
+[u S218 . 1 `S178 1 . 1 0 `S185 1 . 1 0 `S192 1 . 1 0 `S199 1 . 1 0 `S206 1 . 1 0 `S213 1 . 1 0 ]
+[v _DAC1CON0bits DAC1CON0bits `VES218  1 e 1 @1425 ]
+"11444
+[v _DAC1REFL DAC1REFL `VEuc  1 e 1 @1426 ]
+"11866
+[v _DAC1REFH DAC1REFH `VEuc  1 e 1 @1427 ]
+"15 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\ugrid.c
+[v _ug_idx_tab ug_idx_tab `[16]us  1 s 32 ug_idx_tab ]
+"19
+[v _g_idx_tab g_idx_tab `[16]us  1 s 32 g_idx_tab ]
+"23
+[v _g_idx_tab_size g_idx_tab_size `uc  1 s 1 g_idx_tab_size ]
+"24
+[v _ug_idx_tab_size ug_idx_tab_size `uc  1 s 1 ug_idx_tab_size ]
+"26
+[v _ucp_tab ucp_tab `[16][16]us  1 s 512 ucp_tab ]
+"45
+[v _ucpm_tab ucpm_tab `[16]us  1 s 32 ucpm_tab ]
+"49 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"73
+} 0
+"50 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"72
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"76
+} 0
+"57 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"101
+} 0
+"60 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"70
+} 0
+"68 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
+{
+"78
+} 0
+"64 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"52 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"70
+} 0
+"137 D:\Users\Сергій Недосєков\MPLABXProjects\ugrid.x\mcc_generated_files/adc.c
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+{
+"141
+} 0

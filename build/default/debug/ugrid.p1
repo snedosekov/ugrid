@@ -1,0 +1,559 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"15 ugrid.c
+[v _ug_idx_tab `us ~T0 @X0 -> 0 `x s ]
+[i _ug_idx_tab
+:U ..
+"16
+-> -> 0 `i `us
+-> -> 26 `i `us
+-> -> 51 `i `us
+-> -> 77 `i `us
+-> -> 102 `i `us
+-> -> 128 `i `us
+-> -> 154 `i `us
+-> -> 179 `i `us
+-> -> 205 `i `us
+-> -> 230 `i `us
+-> -> 256 `i `us
+-> -> 282 `i `us
+-> -> 307 `i `us
+-> -> 333 `i `us
+-> -> 358 `i `us
+"17
+-> -> 379 `i `us
+..
+]
+[; ;ugrid.c: 15: static unsigned short int ug_idx_tab[] = {
+[; ;ugrid.c: 16: 0 , 26, 51, 77, 102, 128, 154, 179, 205, 230, 256, 282, 307, 333, 358, 379
+[; ;ugrid.c: 17: };
+"19
+[v _g_idx_tab `us ~T0 @X0 -> 0 `x s ]
+[i _g_idx_tab
+:U ..
+"20
+-> -> 0 `i `us
+-> -> 2 `i `us
+-> -> 5 `i `us
+-> -> 10 `i `us
+-> -> 20 `i `us
+-> -> 51 `i `us
+-> -> 102 `i `us
+-> -> 146 `i `us
+-> -> 205 `i `us
+-> -> 256 `i `us
+-> -> 341 `i `us
+-> -> 441 `i `us
+-> -> 515 `i `us
+-> -> 635 `i `us
+-> -> 795 `i `us
+"21
+-> -> 992 `i `us
+..
+]
+[; ;ugrid.c: 19: static unsigned short int g_idx_tab[] = {
+[; ;ugrid.c: 20: 0, 2, 5, 10, 20, 51, 102, 146, 205, 256, 341, 441, 515, 635, 795, 992
+[; ;ugrid.c: 21: };
+"23
+[v _g_idx_tab_size `uc ~T0 @X0 1 s ]
+[i _g_idx_tab_size
+-> -> 16 `i `uc
+]
+[; ;ugrid.c: 23: static unsigned char g_idx_tab_size = 16;
+"24
+[v _ug_idx_tab_size `uc ~T0 @X0 1 s ]
+[i _ug_idx_tab_size
+-> -> 16 `i `uc
+]
+[; ;ugrid.c: 24: static unsigned char ug_idx_tab_size = 16;
+[v F68 `us ~T0 @X0 -> 16 `i t ]
+"26
+[v _ucp_tab `F68 ~T0 @X0 -> 16 `i s ]
+[i _ucp_tab
+:U ..
+:U ..
+"27
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+-> -> 256 `i `us
+..
+:U ..
+"28
+-> -> 256 `i `us
+-> -> 280 `i `us
+-> -> 283 `i `us
+-> -> 285 `i `us
+-> -> 287 `i `us
+-> -> 291 `i `us
+-> -> 293 `i `us
+-> -> 294 `i `us
+-> -> 295 `i `us
+-> -> 296 `i `us
+-> -> 297 `i `us
+-> -> 298 `i `us
+-> -> 298 `i `us
+-> -> 299 `i `us
+-> -> 300 `i `us
+-> -> 301 `i `us
+..
+:U ..
+"29
+-> -> 256 `i `us
+-> -> 304 `i `us
+-> -> 315 `i `us
+-> -> 324 `i `us
+-> -> 332 `i `us
+-> -> 340 `i `us
+-> -> 342 `i `us
+-> -> 343 `i `us
+-> -> 344 `i `us
+-> -> 345 `i `us
+-> -> 346 `i `us
+-> -> 347 `i `us
+-> -> 348 `i `us
+-> -> 348 `i `us
+-> -> 349 `i `us
+-> -> 350 `i `us
+..
+:U ..
+"30
+-> -> 256 `i `us
+-> -> 329 `i `us
+-> -> 344 `i `us
+-> -> 358 `i `us
+-> -> 371 `i `us
+-> -> 380 `i `us
+-> -> 383 `i `us
+-> -> 384 `i `us
+-> -> 386 `i `us
+-> -> 386 `i `us
+-> -> 389 `i `us
+-> -> 390 `i `us
+-> -> 390 `i `us
+-> -> 391 `i `us
+-> -> 392 `i `us
+-> -> 394 `i `us
+..
+:U ..
+"31
+-> -> 256 `i `us
+-> -> 353 `i `us
+-> -> 373 `i `us
+-> -> 393 `i `us
+-> -> 404 `i `us
+-> -> 417 `i `us
+-> -> 419 `i `us
+-> -> 420 `i `us
+-> -> 422 `i `us
+-> -> 423 `i `us
+-> -> 425 `i `us
+-> -> 426 `i `us
+-> -> 426 `i `us
+-> -> 427 `i `us
+-> -> 429 `i `us
+-> -> 432 `i `us
+..
+:U ..
+"32
+-> -> 256 `i `us
+-> -> 376 `i `us
+-> -> 401 `i `us
+-> -> 422 `i `us
+-> -> 439 `i `us
+-> -> 448 `i `us
+-> -> 450 `i `us
+-> -> 452 `i `us
+-> -> 453 `i `us
+-> -> 455 `i `us
+-> -> 456 `i `us
+-> -> 457 `i `us
+-> -> 458 `i `us
+-> -> 460 `i `us
+-> -> 463 `i `us
+-> -> 467 `i `us
+..
+:U ..
+"33
+-> -> 256 `i `us
+-> -> 402 `i `us
+-> -> 434 `i `us
+-> -> 452 `i `us
+-> -> 467 `i `us
+-> -> 475 `i `us
+-> -> 477 `i `us
+-> -> 478 `i `us
+-> -> 480 `i `us
+-> -> 482 `i `us
+-> -> 484 `i `us
+-> -> 485 `i `us
+-> -> 487 `i `us
+-> -> 490 `i `us
+-> -> 493 `i `us
+-> -> 498 `i `us
+..
+:U ..
+"34
+-> -> 256 `i `us
+-> -> 430 `i `us
+-> -> 461 `i `us
+-> -> 478 `i `us
+-> -> 492 `i `us
+-> -> 499 `i `us
+-> -> 502 `i `us
+-> -> 504 `i `us
+-> -> 505 `i `us
+-> -> 506 `i `us
+-> -> 508 `i `us
+-> -> 510 `i `us
+-> -> 512 `i `us
+-> -> 516 `i `us
+-> -> 521 `i `us
+-> -> 527 `i `us
+..
+:U ..
+"35
+-> -> 256 `i `us
+-> -> 455 `i `us
+-> -> 485 `i `us
+-> -> 503 `i `us
+-> -> 513 `i `us
+-> -> 519 `i `us
+-> -> 523 `i `us
+-> -> 525 `i `us
+-> -> 526 `i `us
+-> -> 527 `i `us
+-> -> 530 `i `us
+-> -> 532 `i `us
+-> -> 535 `i `us
+-> -> 539 `i `us
+-> -> 545 `i `us
+-> -> 553 `i `us
+..
+:U ..
+"36
+-> -> 256 `i `us
+-> -> 477 `i `us
+-> -> 506 `i `us
+-> -> 522 `i `us
+-> -> 532 `i `us
+-> -> 537 `i `us
+-> -> 541 `i `us
+-> -> 543 `i `us
+-> -> 544 `i `us
+-> -> 546 `i `us
+-> -> 548 `i `us
+-> -> 551 `i `us
+-> -> 553 `i `us
+-> -> 559 `i `us
+-> -> 566 `i `us
+-> -> 576 `i `us
+..
+:U ..
+"37
+-> -> 256 `i `us
+-> -> 498 `i `us
+-> -> 526 `i `us
+-> -> 539 `i `us
+-> -> 549 `i `us
+-> -> 555 `i `us
+-> -> 558 `i `us
+-> -> 560 `i `us
+-> -> 561 `i `us
+-> -> 563 `i `us
+-> -> 566 `i `us
+-> -> 570 `i `us
+-> -> 573 `i `us
+-> -> 580 `i `us
+-> -> 587 `i `us
+-> -> 600 `i `us
+..
+:U ..
+"38
+-> -> 256 `i `us
+-> -> 517 `i `us
+-> -> 542 `i `us
+-> -> 555 `i `us
+-> -> 563 `i `us
+-> -> 568 `i `us
+-> -> 572 `i `us
+-> -> 574 `i `us
+-> -> 576 `i `us
+-> -> 578 `i `us
+-> -> 581 `i `us
+-> -> 586 `i `us
+-> -> 589 `i `us
+-> -> 595 `i `us
+-> -> 607 `i `us
+-> -> 624 `i `us
+..
+:U ..
+"39
+-> -> 256 `i `us
+-> -> 534 `i `us
+-> -> 557 `i `us
+-> -> 569 `i `us
+-> -> 577 `i `us
+-> -> 582 `i `us
+-> -> 586 `i `us
+-> -> 587 `i `us
+-> -> 589 `i `us
+-> -> 592 `i `us
+-> -> 595 `i `us
+-> -> 601 `i `us
+-> -> 605 `i `us
+-> -> 614 `i `us
+-> -> 626 `i `us
+-> -> 636 `i `us
+..
+:U ..
+"40
+-> -> 256 `i `us
+-> -> 548 `i `us
+-> -> 570 `i `us
+-> -> 583 `i `us
+-> -> 589 `i `us
+-> -> 593 `i `us
+-> -> 596 `i `us
+-> -> 598 `i `us
+-> -> 600 `i `us
+-> -> 603 `i `us
+-> -> 608 `i `us
+-> -> 613 `i `us
+-> -> 623 `i `us
+-> -> 633 `i `us
+-> -> 640 `i `us
+-> -> 648 `i `us
+..
+:U ..
+"41
+-> -> 256 `i `us
+-> -> 563 `i `us
+-> -> 584 `i `us
+-> -> 593 `i `us
+-> -> 599 `i `us
+-> -> 603 `i `us
+-> -> 606 `i `us
+-> -> 607 `i `us
+-> -> 610 `i `us
+-> -> 613 `i `us
+-> -> 618 `i `us
+-> -> 624 `i `us
+-> -> 640 `i `us
+-> -> 654 `i `us
+-> -> 656 `i `us
+-> -> 660 `i `us
+..
+:U ..
+"42
+-> -> 256 `i `us
+-> -> 572 `i `us
+-> -> 591 `i `us
+-> -> 600 `i `us
+-> -> 606 `i `us
+-> -> 612 `i `us
+-> -> 615 `i `us
+-> -> 616 `i `us
+-> -> 620 `i `us
+-> -> 623 `i `us
+-> -> 628 `i `us
+-> -> 637 `i `us
+-> -> 670 `i `us
+-> -> 670 `i `us
+-> -> 670 `i `us
+-> -> 670 `i `us
+..
+..
+]
+[; ;ugrid.c: 26: static unsigned short int ucp_tab[16][16] = {
+[; ;ugrid.c: 27: {256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256},
+[; ;ugrid.c: 28: {256, 280, 283, 285, 287, 291, 293, 294, 295, 296, 297, 298, 298, 299, 300, 301},
+[; ;ugrid.c: 29: {256, 304, 315, 324, 332, 340, 342, 343, 344, 345, 346, 347, 348, 348, 349, 350},
+[; ;ugrid.c: 30: {256, 329, 344, 358, 371, 380, 383, 384, 386, 386, 389, 390, 390, 391, 392, 394},
+[; ;ugrid.c: 31: {256, 353, 373, 393, 404, 417, 419, 420, 422, 423, 425, 426, 426, 427, 429, 432},
+[; ;ugrid.c: 32: {256, 376, 401, 422, 439, 448, 450, 452, 453, 455, 456, 457, 458, 460, 463, 467},
+[; ;ugrid.c: 33: {256, 402, 434, 452, 467, 475, 477, 478, 480, 482, 484, 485, 487, 490, 493, 498},
+[; ;ugrid.c: 34: {256, 430, 461, 478, 492, 499, 502, 504, 505, 506, 508, 510, 512, 516, 521, 527},
+[; ;ugrid.c: 35: {256, 455, 485, 503, 513, 519, 523, 525, 526, 527, 530, 532, 535, 539, 545, 553},
+[; ;ugrid.c: 36: {256, 477, 506, 522, 532, 537, 541, 543, 544, 546, 548, 551, 553, 559, 566, 576},
+[; ;ugrid.c: 37: {256, 498, 526, 539, 549, 555, 558, 560, 561, 563, 566, 570, 573, 580, 587, 600},
+[; ;ugrid.c: 38: {256, 517, 542, 555, 563, 568, 572, 574, 576, 578, 581, 586, 589, 595, 607, 624},
+[; ;ugrid.c: 39: {256, 534, 557, 569, 577, 582, 586, 587, 589, 592, 595, 601, 605, 614, 626, 636},
+[; ;ugrid.c: 40: {256, 548, 570, 583, 589, 593, 596, 598, 600, 603, 608, 613, 623, 633, 640, 648},
+[; ;ugrid.c: 41: {256, 563, 584, 593, 599, 603, 606, 607, 610, 613, 618, 624, 640, 654, 656, 660},
+[; ;ugrid.c: 42: {256, 572, 591, 600, 606, 612, 615, 616, 620, 623, 628, 637, 670, 670, 670, 670}
+[; ;ugrid.c: 43: };
+"45
+[v _ucpm_tab `us ~T0 @X0 -> 0 `x s ]
+[i _ucpm_tab
+:U ..
+"46
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 0 `i `us
+-> -> 600 `i `us
+-> -> 607 `i `us
+-> -> 614 `i `us
+-> -> 623 `i `us
+-> -> 631 `i `us
+"47
+-> -> 637 `i `us
+..
+]
+[; ;ugrid.c: 45: static unsigned short int ucpm_tab[] = {
+[; ;ugrid.c: 46: 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 600, 607, 614, 623, 631, 637
+[; ;ugrid.c: 47: };
+[v F74 `(uc ~T0 @X0 1 tf3`*us`us`us ]
+"49
+[v _get_tab_idx `TF74 ~T0 @X0 1 s ]
+{
+[; ;ugrid.c: 49: static inline unsigned char get_tab_idx(unsigned short int tab[], unsigned short int tab_size, unsigned short int val){
+[e :U _get_tab_idx ]
+[v _tab `*us ~T0 @X0 1 r1 ]
+[v _tab_size `us ~T0 @X0 1 r2 ]
+[v _val `us ~T0 @X0 1 r3 ]
+[f ]
+"50
+[v _idx `uc ~T0 @X0 1 a ]
+[; ;ugrid.c: 50: unsigned char idx = 0;
+[e = _idx -> -> 0 `i `uc ]
+[; ;ugrid.c: 51: for(; idx < tab_size; idx++)
+"51
+{
+[e $U 6  ]
+"52
+[e :U 3 ]
+[; ;ugrid.c: 52: if(val < tab[idx])
+[e $ ! < -> _val `ui -> *U + _tab * -> _idx `ux -> -> # *U _tab `ui `ux `ui 7  ]
+[; ;ugrid.c: 53: break;
+"53
+[e $U 4  ]
+[e :U 7 ]
+"51
+[e ++ _idx -> -> 1 `i `uc ]
+[e :U 6 ]
+[e $ < -> _idx `ui -> _tab_size `ui 3  ]
+[e :U 4 ]
+"54
+}
+[; ;ugrid.c: 54: return idx;
+[e ) _idx ]
+[e $UE 2  ]
+[; ;ugrid.c: 55: }
+"55
+[e :UE 2 ]
+}
+"57
+[v _calc_ucp `(us ~T0 @X0 1 ef2`us`us ]
+{
+[; ;ugrid.c: 57: unsigned short int calc_ucp(unsigned short int ug, unsigned short int g){
+[e :U _calc_ucp ]
+[v _ug `us ~T0 @X0 1 r1 ]
+[v _g `us ~T0 @X0 1 r2 ]
+[f ]
+"58
+[v _g_idx `uc ~T0 @X0 1 a ]
+[v _ug_idx `uc ~T0 @X0 1 a ]
+"59
+[v _kn `us ~T0 @X0 1 a ]
+[v _ucp `us ~T0 @X0 1 a ]
+[v _ucpm `us ~T0 @X0 1 a ]
+[v _ucp1 `us ~T0 @X0 1 a ]
+[v _ucp2 `us ~T0 @X0 1 a ]
+[; ;ugrid.c: 58: unsigned char g_idx, ug_idx;
+[; ;ugrid.c: 59: unsigned short int kn, ucp, ucpm, ucp1, ucp2;
+[; ;ugrid.c: 61: g_idx = get_tab_idx(g_idx_tab, g_idx_tab_size, g);
+"61
+[e = _g_idx ( _get_tab_idx (3 , , &U _g_idx_tab -> _g_idx_tab_size `us _g ]
+[; ;ugrid.c: 62: ug_idx = get_tab_idx(ug_idx_tab, ug_idx_tab_size, ug);
+"62
+[e = _ug_idx ( _get_tab_idx (3 , , &U _ug_idx_tab -> _ug_idx_tab_size `us _ug ]
+[; ;ugrid.c: 67: kn = (ug - ug_idx_tab[ug_idx - 1]) / (ug_idx_tab[ug_idx] - ug_idx_tab[ug_idx -1]);
+"67
+[e = _kn -> / - -> _ug `ui -> *U + &U _ug_idx_tab * -> -> - -> _ug_idx `i -> 1 `i `ui `ux -> -> # *U &U _ug_idx_tab `ui `ux `ui - -> *U + &U _ug_idx_tab * -> _ug_idx `ux -> -> # *U &U _ug_idx_tab `ui `ux `ui -> *U + &U _ug_idx_tab * -> -> - -> _ug_idx `i -> 1 `i `ui `ux -> -> # *U &U _ug_idx_tab `ui `ux `ui `us ]
+[; ;ugrid.c: 68: ucp1 = ucp_tab[g_idx - 1, ug_idx -1] +
+[; ;ugrid.c: 69: (ucp_tab[g_idx - 1, ug_idx] - ucp_tab[g_idx - 1, ug_idx -1]) * kn;
+"69
+[e = _ucp1 -> + &U *U + &U _ucp_tab * -> -> ; - -> _g_idx `i -> 1 `i - -> _ug_idx `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux * * / - -> &U *U + &U _ucp_tab * -> ; - -> _g_idx `i -> 1 `i _ug_idx `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `x -> &U *U + &U _ucp_tab * -> -> ; - -> _g_idx `i -> 1 `i - -> _ug_idx `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `x -> -> # *U &U *U + &U _ucp_tab * -> ; - -> _g_idx `i -> 1 `i _ug_idx `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `i `x -> _kn `x -> -> # *U &U *U + &U _ucp_tab * -> -> ; - -> _g_idx `i -> 1 `i - -> _ug_idx `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `i `x `us ]
+[; ;ugrid.c: 71: ucp2 = ucp_tab[g_idx, ug_idx -1] +
+[; ;ugrid.c: 72: (ucp_tab[g_idx, ug_idx] - ucp_tab[g_idx, ug_idx -1]) * kn;
+"72
+[e = _ucp2 -> + &U *U + &U _ucp_tab * -> -> ; _g_idx - -> _ug_idx `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux * * / - -> &U *U + &U _ucp_tab * -> ; _g_idx _ug_idx `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `x -> &U *U + &U _ucp_tab * -> -> ; _g_idx - -> _ug_idx `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `x -> -> # *U &U *U + &U _ucp_tab * -> ; _g_idx _ug_idx `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `i `x -> _kn `x -> -> # *U &U *U + &U _ucp_tab * -> -> ; _g_idx - -> _ug_idx `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _ucp_tab `ui -> -> 16 `i `ui `ux `i `x `us ]
+[; ;ugrid.c: 74: ucp = ucp1 + (ucp2 - ucp1) * (g - g_idx_tab[g_idx - 1]) / (g_idx_tab[g_idx] - g_idx_tab[g_idx - 1]);
+"74
+[e = _ucp -> + -> _ucp1 `ui / * - -> _ucp2 `ui -> _ucp1 `ui - -> _g `ui -> *U + &U _g_idx_tab * -> -> - -> _g_idx `i -> 1 `i `ui `ux -> -> # *U &U _g_idx_tab `ui `ux `ui - -> *U + &U _g_idx_tab * -> _g_idx `ux -> -> # *U &U _g_idx_tab `ui `ux `ui -> *U + &U _g_idx_tab * -> -> - -> _g_idx `i -> 1 `i `ui `ux -> -> # *U &U _g_idx_tab `ui `ux `ui `us ]
+[; ;ugrid.c: 76: if(g <= 441 || ug <= 256)
+"76
+[e $ ! || <= -> _g `ui -> -> 441 `i `ui <= -> _ug `ui -> -> 256 `i `ui 9  ]
+[; ;ugrid.c: 77: return ucp;
+"77
+[e ) _ucp ]
+[e $UE 8  ]
+[e :U 9 ]
+[; ;ugrid.c: 79: ucpm = ucpm_tab[g_idx - 1] + (ucpm_tab[g_idx ] - ucpm_tab[g_idx - 1]) *
+[; ;ugrid.c: 80: (ug - ug_idx_tab[ug_idx - 1]) / (ug_idx_tab[ug_idx] - ug_idx_tab[ug_idx - 1]);
+"80
+[e = _ucpm -> + -> *U + &U _ucpm_tab * -> -> - -> _g_idx `i -> 1 `i `ui `ux -> -> # *U &U _ucpm_tab `ui `ux `ui / * - -> *U + &U _ucpm_tab * -> _g_idx `ux -> -> # *U &U _ucpm_tab `ui `ux `ui -> *U + &U _ucpm_tab * -> -> - -> _g_idx `i -> 1 `i `ui `ux -> -> # *U &U _ucpm_tab `ui `ux `ui - -> _ug `ui -> *U + &U _ug_idx_tab * -> -> - -> _ug_idx `i -> 1 `i `ui `ux -> -> # *U &U _ug_idx_tab `ui `ux `ui - -> *U + &U _ug_idx_tab * -> _ug_idx `ux -> -> # *U &U _ug_idx_tab `ui `ux `ui -> *U + &U _ug_idx_tab * -> -> - -> _ug_idx `i -> 1 `i `ui `ux -> -> # *U &U _ug_idx_tab `ui `ux `ui `us ]
+[; ;ugrid.c: 81: if(ucp <= ucpm)
+"81
+[e $ ! <= -> _ucp `ui -> _ucpm `ui 10  ]
+[; ;ugrid.c: 82: ucp = ucpm;
+"82
+[e = _ucp _ucpm ]
+[e :U 10 ]
+[; ;ugrid.c: 84: return ucp;
+"84
+[e ) _ucp ]
+[e $UE 8  ]
+[; ;ugrid.c: 85: }
+"85
+[e :UE 8 ]
+}

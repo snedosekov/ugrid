@@ -1,5 +1,5 @@
 
-#include <stdsio.h>
+#include <stdio.h>
 
 #ifndef uint8_t
 #define uint8_t unsigned char
@@ -20,7 +20,10 @@ static uint16_t g_idx_tab[] = {
     0, 2, 5, 10, 20, 51, 102, 146, 205, 256, 341, 441, 515, 635, 795, 992
 };
 
-static uint16_t ucp_tab[][] = {
+static uint8_t g_idx_tab_size = 16;
+static uint8_t ug_idx_tab_size = 16;
+
+static uint16_t ucp_tab[16][16] = {
     {256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256},
     {256, 280, 283,	285, 287, 291, 293, 294, 295, 296, 297, 298, 298, 299, 300, 301},
     {256, 304, 315,	324, 332, 340, 342, 343, 344, 345, 346, 347, 348, 348, 349, 350},
@@ -43,9 +46,6 @@ static uint16_t ucpm_tab[] = {
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 600, 607, 614, 623, 631, 637
 };
 
-static uint8_t g_idx_tab_size = sizeof(g_idx_tab) / sizeof(uint16_t);
-static uint8_t ug_idx_tab_size = sizeof(ug_idx_tab) / sizeof(uint16_t);
-
 static inline uint8_t get_tab_idx(uint16_t tab[], uint16_t tab_size, uint16_t val){
     uint8_t idx = 0;
     for(; idx < tab_size; idx++)
@@ -61,8 +61,8 @@ uint16_t calc_ucp(uint16_t ug, uint16_t g){
     g_idx = get_tab_idx(g_idx_tab, g_idx_tab_size, g);
     ug_idx = get_tab_idx(ug_idx_tab, ug_idx_tab_size, ug);
     
-    g_idx = (g_idx == 0) ? 1 : g_idx;
-    ug_idx = (ug_idx == 0) ? 1 : ug_idx;
+    //g_idx = (g_idx == 0) ? 1 : g_idx;
+    //ug_idx = (ug_idx == 0) ? 1 : ug_idx;
     
     kn = (ug - ug_idx_tab[ug_idx - 1]) / (ug_idx_tab[ug_idx] - ug_idx_tab[ug_idx -1]);
     ucp1 = ucp_tab[g_idx - 1, ug_idx -1] + 
@@ -71,14 +71,14 @@ uint16_t calc_ucp(uint16_t ug, uint16_t g){
     ucp2 = ucp_tab[g_idx, ug_idx -1] + 
           (ucp_tab[g_idx, ug_idx] - ucp_tab[g_idx, ug_idx -1]) * kn;
  
-    ucp = ucp1 + (ucp2 - ucp1) * (g - g_idx_tab[g_idx - 1]) / (g_idx_tab(g_idx) - g_idx_tab[g_idx - 1]);
+    ucp = ucp1 + (ucp2 - ucp1) * (g - g_idx_tab[g_idx - 1]) / (g_idx_tab[g_idx] - g_idx_tab[g_idx - 1]);
 
     if(g <= g_lim || ug <= ug_lim)
         return ucp;
     
-    ucpm = ucpm_tab[g_idx - 1] + (ucpm_tab[g_idx ] - ucpm_tab[m_g_idx - 1]) * 
+    ucpm = ucpm_tab[g_idx - 1] + (ucpm_tab[g_idx ] - ucpm_tab[g_idx - 1]) * 
             (ug - ug_idx_tab[ug_idx - 1]) / (ug_idx_tab[ug_idx] - ug_idx_tab[ug_idx - 1]);
-    if(ucp < = ucpm)
+    if(ucp <= ucpm)
         ucp = ucpm;
     
     return ucp;
