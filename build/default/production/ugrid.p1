@@ -492,10 +492,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 2 ]
 }
 "57
-[v _calc_ucp `(us ~T0 @X0 1 ef2`us`us ]
+[v _ugrid_calc_ucp `(us ~T0 @X0 1 ef2`us`us ]
 {
-[; ;ugrid.c: 57: unsigned short int calc_ucp(unsigned short int ug, unsigned short int g){
-[e :U _calc_ucp ]
+[; ;ugrid.c: 57: unsigned short int ugrid_calc_ucp(unsigned short int ug, unsigned short int g){
+[e :U _ugrid_calc_ucp ]
 [v _ug `us ~T0 @X0 1 r1 ]
 [v _g `us ~T0 @X0 1 r2 ]
 [f ]

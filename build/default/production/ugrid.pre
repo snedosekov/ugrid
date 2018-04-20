@@ -107,7 +107,7 @@ break;
 return idx;
 }
 
-unsigned short int calc_ucp(unsigned short int ug, unsigned short int g){
+unsigned short int ugrid_calc_ucp(unsigned short int ug, unsigned short int g){
 unsigned char g_idx, ug_idx;
 unsigned short int kn, ucp, ucpm, ucp1, ucp2;
 

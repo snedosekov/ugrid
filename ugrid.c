@@ -54,7 +54,7 @@ static inline uint8_t get_tab_idx(uint16_t tab[], uint16_t tab_size, uint16_t va
     return idx;
 }
 
-uint16_t calc_ucp(uint16_t ug, uint16_t g){
+uint16_t ugrid_calc_ucp(uint16_t ug, uint16_t g){
     uint8_t g_idx, ug_idx;
     uint16_t kn, ucp, ucpm, ucp1, ucp2;
     

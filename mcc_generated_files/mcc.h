@@ -50,11 +50,10 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "interrupt_manager.h"
 #include "dac1.h"
 #include "adc.h"
 
-#define _XTAL_FREQ  16000000
+#define _XTAL_FREQ  1000000
 
 
 /**

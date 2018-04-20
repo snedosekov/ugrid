@@ -42,12 +42,22 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-
+#include "mcc_generated_files/adc.h"
+#include "mcc_generated_files/dac1.h"
+#include "ugrid.h"
 /*
                          Main application
  */
+
+#define  ch_ug  channel_AN2
+#define  ch_g   channel_AN4
+
+
 void main(void)
 {
+    adc_result_t val_ug;
+    adc_result_t val_g;
+    uint16_t result;
     // initialize the device
     SYSTEM_Initialize();
 
@@ -67,7 +77,12 @@ void main(void)
     //INTERRUPT_PeripheralInterruptDisable();
 
     while (1)
-    {
+    {        
+        val_ug = ADC_GetConversion(ch_ug);
+        val_g = ADC_GetConversion(ch_g);
+        
+        result = ugrid_calc_ucp(val_ug, val_g);
+        DAC1_Load10bitInputData(result);
         // Add your application code
     }
 }

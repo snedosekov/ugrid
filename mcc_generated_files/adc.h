@@ -93,9 +93,9 @@ typedef struct
 
 typedef enum
 {
-    channel_AN1 =  0x1,
     channel_AN2 =  0x2,
     channel_AN4 =  0x4,
+    channel_AN5 =  0x5,
     channel_DAC4_Output =  0x1A,
     channel_DAC3_Output =  0x1B,
     channel_DAC2_Output =  0x1C,
@@ -291,22 +291,6 @@ adc_result_t ADC_GetConversionResult(void);
 */
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-
-/**
-  @Summary
-    Implements ISR
-
-  @Description
-    This routine is used to implement the ISR for the interrupt-driven
-    implementations.
-
-  @Returns
-    None
-
-  @Param
-    None
-*/
-void ADC_ISR(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

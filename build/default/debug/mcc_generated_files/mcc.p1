@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "144 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"84 mcc_generated_files/mcc.h
+"83 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"96
+"95
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "94 mcc_generated_files/dac1.h
 [v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
@@ -10039,7 +10039,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupt_manager.h: 109: void interrupt INTERRUPT_InterruptManager(void);
 [; ;dac1.h: 94: void DAC1_Initialize(void);
 [; ;dac1.h: 125: void DAC1_Load16bitInputData(uint16_t input16BitData);
 [; ;dac1.h: 156: void DAC1_Load10bitInputData(uint16_t input10BitData);
@@ -10053,9 +10052,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 80: } adc_sync_double_result_t;
 [; ;adc.h: 94: typedef enum
 [; ;adc.h: 95: {
-[; ;adc.h: 96: channel_AN1 = 0x1,
-[; ;adc.h: 97: channel_AN2 = 0x2,
-[; ;adc.h: 98: channel_AN4 = 0x4,
+[; ;adc.h: 96: channel_AN2 = 0x2,
+[; ;adc.h: 97: channel_AN4 = 0x4,
+[; ;adc.h: 98: channel_AN5 = 0x5,
 [; ;adc.h: 99: channel_DAC4_Output = 0x1A,
 [; ;adc.h: 100: channel_DAC3_Output = 0x1B,
 [; ;adc.h: 101: channel_DAC2_Output = 0x1C,
@@ -10069,10 +10068,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 229: bool ADC_IsConversionDone();
 [; ;adc.h: 262: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 292: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;adc.h: 309: void ADC_ISR(void);
-[; ;mcc.h: 71: void SYSTEM_Initialize(void);
-[; ;mcc.h: 84: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 96: void WDT_Initialize(void);
+[; ;mcc.h: 70: void SYSTEM_Initialize(void);
+[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 95: void WDT_Initialize(void);
 "50 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "51
@@ -10108,9 +10106,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 61: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 63: OSCCON = 0x78;
+[; ;mcc.c: 63: OSCCON = 0x58;
 "63
-[e = _OSCCON -> -> 120 `i `uc ]
+[e = _OSCCON -> -> 88 `i `uc ]
 [; ;mcc.c: 65: OSCSTAT = 0x00;
 "65
 [e = _OSCSTAT -> -> 0 `i `uc ]

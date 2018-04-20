@@ -13000,9 +13000,6 @@ typedef uint16_t uintptr_t;
 # 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdbool.h"
 typedef unsigned char bool;
 
-# 109 "mcc_generated_files/interrupt_manager.h"
-void interrupt INTERRUPT_InterruptManager(void);
-
 # 94 "mcc_generated_files/dac1.h"
 void DAC1_Initialize(void);
 
@@ -13031,9 +13028,9 @@ adc_result_t adcResult2;
 # 94
 typedef enum
 {
-channel_AN1 = 0x1,
 channel_AN2 = 0x2,
 channel_AN4 = 0x4,
+channel_AN5 = 0x5,
 channel_DAC4_Output = 0x1A,
 channel_DAC3_Output = 0x1B,
 channel_DAC2_Output = 0x1C,
@@ -13060,27 +13057,35 @@ adc_result_t ADC_GetConversionResult(void);
 # 292
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 309
-void ADC_ISR(void);
-
-# 71 "mcc_generated_files/mcc.h"
+# 70 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 84
+# 83
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 95
 void WDT_Initialize(void);
 
-# 49 "main.c"
+# 15 "ugrid.h"
+uint16_t ugrid_calc_ucp(uint16_t ug, uint16_t g);
+
+# 56 "main.c"
 void main(void)
 {
+adc_result_t val_ug;
+adc_result_t val_g;
+uint16_t result;
 
 SYSTEM_Initialize();
 
-# 69
+# 79
 while (1)
 {
+val_ug = ADC_GetConversion(channel_AN2);
+val_g = ADC_GetConversion(channel_AN4);
+
+result = ugrid_calc_ucp(val_ug, val_g);
+DAC1_Load16bitInputData(result);
 
 }
 }

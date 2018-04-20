@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Users/Сергій%20Недосєков/MPLABXProjects/ugrid.x/main.c</file>
-            <file>file:/D:/Users/Сергій%20Недосєков/MPLABXProjects/ugrid.x/ugrid.c</file>
+            <file>file:/C:/Program%20Files%20(x86)/Microchip/xc8/v1.45/sources/common/lwdiv.c</file>
+            <file>file:/D:/dev/ugrid/ugrid.h</file>
+            <file>file:/D:/dev/ugrid/main.c</file>
+            <file>file:/D:/dev/ugrid/mcc_generated_files/dac1.c</file>
+            <file>file:/D:/dev/ugrid/mcc_generated_files/adc.h</file>
+            <file>file:/D:/dev/ugrid/ugrid.c</file>
+            <file>file:/D:/dev/ugrid/mcc_generated_files/mcc.c</file>
+            <file>file:/D:/dev/ugrid/mcc_generated_files/adc.c</file>
         </group>
     </open-files>
 </project-private>
